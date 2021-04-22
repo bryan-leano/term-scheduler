@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.term_scheduler_bryanleano">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Term_Scheduler_BryanLeano">
+        <activity android:name=".AssessmentsActivity"
+            android:parentActivityName=".MainActivity"></activity>
+
+        <receiver
+            android:name=".ReminderBroadcast"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".EditAssessmentActivity" />
+        <activity android:name=".AddAssessmentActivity" />
+        <activity android:name=".CourseNotesActivity" />
+        <activity android:name=".EditCourseActivity" />
+        <activity android:name=".AddCourseActivity" />
+        <activity android:name=".AssessmentDetailsActivity" />
+        <activity android:name=".CourseDetailsActivity" />
+        <activity android:name=".EditTermActivity" />
+        <activity
+            android:name=".TermDetailsActivity"
+            android:parentActivityName=".TermsActivity" />
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="false" />
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity
+            android:name=".AddTermActivity"
+            android:label="Add Term"
+            android:parentActivityName=".TermsActivity" />
+        <activity android:name=".CoursesActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".TermsActivity"
+            android:label="Terms"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
